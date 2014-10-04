@@ -38,8 +38,10 @@ playerBrake = 2;
 playerFriction = 1;
 jumpForce = 13; //determines the max jump height, if you want to change the min hight increase jumpTapAdjust
 jumpTapAdjust = 3; //the higher the number the more the jump is shortened by letting off the spacebar early
-timer = 0;
+dashTimer = 0;
 canTurn = true;
+canDash = 1;
+justDashed = false;
 
 //health value. set to one for that classic player expiriance
 globalvar playerHealth;
@@ -84,16 +86,19 @@ if (global.playerHealth &lt;= 0){
 //determine if the player can jump by determining if they are on the ground or not
 if (place_meeting(x,y+1,par_wall))
     {
-    canJump = true;
+    canJump = 1;
+    canDash = 1;
     xpos = x;
     ypos = y;
     } 
+/*
 else
     {
     canJump= false;
     }
-    
-    
+*/    
+
+ 
     //get movement left
 if canTurn{
     if keyLeft
@@ -157,9 +162,9 @@ spv += grv
 //get jumping imput from player and if the player is on the ground move them up
 if keyJump = true
     {
-    if canJump = true
+    if (canJump &gt;= 1)
         {
-        canJump = false;
+        canJump -= 1;
         spv -= jumpForce;
         jumping = true;
         audio_play_sound(snd_sproing,8,false);
@@ -169,32 +174,40 @@ if keyJump = true
 //reduce jump height if player releases space
     if keyboard_check_released(vk_space)
     {
-    canJump = false;
     if spv &lt; 0
         {
         spv += jumpTapAdjust;
         }
     }
 
-if canJump = false
+if jumping
     {
     sprite_index = anim_playerJump;
     }
     
-    
+
+//starts the dash function
 if key_shoot{
-timer = 10;
+    if canDash &gt;= 1{
+        dashTimer = 10;
+    }
 }
 
-
-if (timer &gt;= 0){
+if (dashTimer &gt; 0){
+    canDash -= 1;
     spv = 0;
     sph = image_xscale * 10;
-    timer -= 1;
+    dashTimer -= 1;
     canTurn = false;
+    justDashed = true;
 }
-if (timer &lt;= 0){
-canTurn = true;
+
+if (dashTimer &lt;= 0){
+    if justDashed{
+        sph = 10 * image_xscale; //10 is the max speed
+        justDashed = false;
+    }
+    canTurn = true;
 }
         
     
