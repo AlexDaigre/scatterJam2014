@@ -30,7 +30,12 @@
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_dink</sprite>
     <sprite>sprites\spr_hit</sprite>
+<<<<<<< HEAD
     <sprite>sprites\spr_enemyHealth</sprite>
+=======
+    <sprite>sprites\sprBlankCol</sprite>
+    <sprite>sprites\sprDashing</sprite>
+>>>>>>> origin/master
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -41,7 +46,11 @@
     <script>scripts\scr_collision_spike.gml</script>
     <script>scripts\scr_respawn.gml</script>
     <script>scripts\scr_collisonLift.gml</script>
+<<<<<<< HEAD
     <script>scripts\scr_respawnEnemy.gml</script>
+=======
+    <script>scripts\cameraMovement.gml</script>
+>>>>>>> origin/master
   </scripts>
   <objects name="objects">
     <objects name="spikes">
@@ -84,13 +93,14 @@
       <object>objects\obj_trainingTarget</object>
     </objects>
     <object>objects\enemyOne</object>
+    <object>objects\enemyRespawner</object>
     <objects name="Enemy">
       <object>objects\obj_Spring</object>
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_test_enemy</room>
     <room>rooms\newMovementDemo</room>
+    <room>rooms\rm_test_enemy</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
     </rooms>
@@ -106,7 +116,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41916.6732416319</constant>
+    <constant name="GM_build_date">41916.8484035185</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
