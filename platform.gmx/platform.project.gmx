@@ -30,12 +30,10 @@
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_dink</sprite>
     <sprite>sprites\spr_hit</sprite>
-<<<<<<< HEAD
     <sprite>sprites\spr_enemyHealth</sprite>
-=======
     <sprite>sprites\sprBlankCol</sprite>
     <sprite>sprites\sprDashing</sprite>
->>>>>>> origin/master
+    <sprite>sprites\sprite22</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -46,11 +44,8 @@
     <script>scripts\scr_collision_spike.gml</script>
     <script>scripts\scr_respawn.gml</script>
     <script>scripts\scr_collisonLift.gml</script>
-<<<<<<< HEAD
     <script>scripts\scr_respawnEnemy.gml</script>
-=======
     <script>scripts\cameraMovement.gml</script>
->>>>>>> origin/master
   </scripts>
   <objects name="objects">
     <objects name="spikes">
@@ -99,6 +94,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\sizeDemo</room>
     <room>rooms\newMovementDemo</room>
     <room>rooms\rm_test_enemy</room>
     <rooms name="menu">
@@ -116,7 +112,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41916.8580079051</constant>
+    <constant name="GM_build_date">41916.896676412</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
