@@ -57,6 +57,8 @@ jumping = false
 canTurn = true;
 justDashed = false;
 dashTimer = 0;
+canDash = true;
+
 
 //playerstate "attacking var"
 globalvar playerAttacking;
@@ -87,6 +89,8 @@ playerAttacking = false;
 //get player imput from keyboard &amp; mouse
 keyLeft = keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
 keyRight = keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
+keyUp = keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
+keyDown = keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
 keyJump = keyboard_check_pressed(vk_space)
 keyJumpRelease = keyboard_check_released(vk_space)
 key_shoot = mouse_check_button_pressed(mb_left)
@@ -118,7 +122,7 @@ if canTurn{
             sph -= playerSpeed;
             image_xscale = -1;
         }
-    //if the player is moving right, slow the player faster, to act as a break
+        //if the player is moving right, slow the player faster, to act as a break
             //this alows the player to break by pressing in the opposite direction, rewarding skilled players
         if (sph &gt; -playerMaxSpeed) &amp;&amp; (sph &gt;= 0)
         {
@@ -131,8 +135,7 @@ if canTurn{
 
 if canTurn{
 //get movement right, same process as the left movement
-    if keyRight
-    {
+    if keyRight{
         sprite_index = anim_playerRun
         if (sph &lt; playerMaxSpeed) &amp;&amp; (sph &lt; 0)
         {
@@ -148,8 +151,7 @@ if canTurn{
 }
     
 //determine if player is entering no movement, and if so break normally
-if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft
-    {
+if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft{
     sprite_index = anim_playerIdle;
     if sph &gt; 0
         {
@@ -160,7 +162,7 @@ if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft
         sph += playerFriction;
         }
     }
-    
+
     
 //move the player down
 spv += grv
@@ -180,13 +182,11 @@ if keyJump = true
     }
 
 //reduce jump height if player releases space
-    if keyboard_check_released(vk_space)
-    {
-    if spv &lt; 0
-        {
+if keyboard_check_released(vk_space){
+    if spv &lt; 0{
         spv += jumpTapAdjust;
         }
-    }
+}
 
 if jumping
     {
@@ -203,21 +203,41 @@ if key_shoot{
 
 if (dashTimer &gt; 0){
     global.playerAttacking = true;
-    spv = 0;
-    sph = image_xscale * dashSpeed;
     dashTimer -= 1;
     canTurn = false;
     justDashed = true;
+    sprite_index = sprDashing;
+
+    if canDash{
+        if keyRight{
+            sph = dashSpeed;
+            spv = 0;
+        }
+        else if keyUp{
+            spv = -dashSpeed;
+            sph = 0;
+        }
+        else if keyLeft{
+            sph = -dashSpeed;
+            spv = 0;
+        }
+        else if keyDown{
+            spv = dashSpeed;
+            sph = 0;
+        }
+    }
 }
 
 if (dashTimer &lt;= 0){
     global.playerAttacking = false;
     if justDashed{
-        sph = playerMaxSpeed * image_xscale; //10 is the max speed
+        sph = sin(sph) * playerMaxSpeed;
+        spv = sin(spv) * playerMaxSpeed;
         justDashed = false;
         airMoves -= 1;
     }
     canTurn = true;
+    canDash = true;
 }
         
     
@@ -248,6 +268,7 @@ jumping = false;
 //move the player for the the values of the x and y movement
 x += sph;
 
+cameraMovement();
 
 /*
 if key_shoot
