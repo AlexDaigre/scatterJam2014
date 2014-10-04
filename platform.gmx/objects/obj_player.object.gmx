@@ -61,7 +61,8 @@ canDash = true;
 canGrav = true;
 spvH = 0;
 sphH = 0;
-
+hZero = 1;
+vZero = 1;
 
 //playerstate "attacking var"
 globalvar playerAttacking;
@@ -94,7 +95,8 @@ keyLeft = keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
 keyRight = keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
 keyUp = keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
 keyDown = keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
-keyJump = keyboard_check_pressed(vk_space)
+keyJumpP = keyboard_check_pressed(vk_space)
+keyJumpD = keyboard_check_direct(vk_space)
 keyJumpRelease = keyboard_check_released(vk_space)
 key_shoot = mouse_check_button_pressed(mb_left)
 
@@ -172,7 +174,7 @@ spv += grv
     
 
 //get jumping imput from player and if the player is on the ground move them up
-if keyJump = true
+if keyJumpP = true
     {
     if ((airMoves &gt;= 1) &amp;&amp; (!playerAttacking))
         {
@@ -182,6 +184,7 @@ if keyJump = true
         audio_play_sound(snd_sproing,8,false);
         }
     }
+
 
 //reduce jump height if player releases space
 if keyboard_check_released(vk_space){
@@ -246,20 +249,22 @@ if (sph = 0){
     hZero = 0;
 }
 else{
-    vZero = 1;
+    hZero = 1;
 }
 
 if (dashTimer &lt;= 0){
+    canTurn = true;
+    canDash = true;
+    canGrav = true;
     global.playerAttacking = false;
     if justDashed{
         sph = sign(sph) * playerMaxSpeed * hZero;
         spv = sign(spv) * playerMaxSpeed * vZero;
         justDashed = false;
         airMoves -= 1;
+        spvH = 0;
+        sphH = 0;
     }
-    canTurn = true;
-    canDash = true;
-    canGrav = true;
 }
         
     
