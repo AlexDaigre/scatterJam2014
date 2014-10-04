@@ -38,6 +38,8 @@ playerBrake = 2;
 playerFriction = 1;
 jumpForce = 13; //determines the max jump height, if you want to change the min hight increase jumpTapAdjust
 jumpTapAdjust = 3; //the higher the number the more the jump is shortened by letting off the spacebar early
+timer = 0;
+canTurn = true;
 
 //health value. set to one for that classic player expiriance
 globalvar playerHealth;
@@ -93,41 +95,44 @@ else
     
     
     //get movement left
-if keyLeft
+if canTurn{
+    if keyLeft
     {
-    sprite_index = anim_playerRun;
-    //if the player is already moving left: accelerate left normaly
-    if (sph &gt; -10) &amp;&amp; (sph &lt; 0)
+        sprite_index = anim_playerRun;
+        //if the player is already moving left: accelerate left normaly
+        if (sph &gt; -10) &amp;&amp; (sph &lt; 0)
         {
-        sph -= playerSpeed;
-        image_xscale = -1;
+            sph -= playerSpeed;
+            image_xscale = -1;
         }
     //if the player is moving right, slow the player faster, to act as a break
             //this alows the player to break by pressing in the opposite direction, rewarding skilled players
-    if (sph &gt; -10) &amp;&amp; (sph &gt;= 0)
+        if (sph &gt; -10) &amp;&amp; (sph &gt;= 0)
         {
-        sph -= playerSpeed;
-        image_xscale = -1;
+            sph -= playerSpeed;
+            image_xscale = -1;
         }    
     }
-
+}
     
+
+if canTurn{
 //get movement right, same process as the left movement
-if keyRight
+    if keyRight
     {
-    sprite_index = anim_playerRun
-    if (sph &lt; 10) &amp;&amp; (sph &lt; 0)
+        sprite_index = anim_playerRun
+        if (sph &lt; 10) &amp;&amp; (sph &lt; 0)
         {
-        sph += playerSpeed;
-        image_xscale = 1;
+            sph += playerSpeed;
+            image_xscale = 1;
         }
-    if (sph &lt; 10) &amp;&amp; (sph &gt;= 0)
+        if (sph &lt; 10) &amp;&amp; (sph &gt;= 0)
         {
-        sph += playerSpeed;
-        image_xscale = 1;
+            sph += playerSpeed;
+            image_xscale = 1;
         }
     }
-
+}
     
 //determine if player is entering no movement, and if so break normally
 if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft
@@ -175,6 +180,22 @@ if canJump = false
     {
     sprite_index = anim_playerJump;
     }
+    
+    
+if key_shoot{
+timer = 10;
+}
+
+
+if (timer &gt;= 0){
+    spv = 0;
+    sph = image_xscale * 10;
+    timer -= 1;
+    canTurn = false;
+}
+if (timer &lt;= 0){
+canTurn = true;
+}
         
     
 //collision with walls
@@ -205,10 +226,12 @@ jumping = false;
 x += sph;
 
 
+/*
 if key_shoot
     {
     instance_create(x,y,obj_shot);
     }
+*\
 </string>
           </argument>
         </arguments>
