@@ -58,6 +58,9 @@ canTurn = true;
 justDashed = false;
 dashTimer = 0;
 canDash = true;
+canGrav = true;
+spvH = 0;
+sphH = 0;
 
 
 //playerstate "attacking var"
@@ -166,7 +169,6 @@ if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft{
     
 //move the player down
 spv += grv
-
     
 
 //get jumping imput from player and if the player is on the ground move them up
@@ -197,7 +199,9 @@ if jumping
 //starts the dash function
 if key_shoot{
     if airMoves &gt;= 1{
-        dashTimer = totalDash;
+        if canDash{
+            dashTimer = totalDash;
+        }
     }
 }
 
@@ -210,34 +214,52 @@ if (dashTimer &gt; 0){
 
     if canDash{
         if keyRight{
-            sph = dashSpeed;
-            spv = 0;
+            sphH = dashSpeed;
+            spvH = 0;
         }
         else if keyUp{
-            spv = -dashSpeed;
-            sph = 0;
+            spvH = -dashSpeed;
+            sphH = 0;
         }
         else if keyLeft{
-            sph = -dashSpeed;
-            spv = 0;
+            sphH = -dashSpeed;
+            spvH = 0;
         }
         else if keyDown{
-            spv = dashSpeed;
-            sph = 0;
+            spvH = dashSpeed;
+            sphH = 0;
         }
+        canDash = false;
     }
+    spv = spvH
+    sph = sphH
+}
+
+if (spv = 0){
+    vZero = 0;
+}
+else{
+    vZero = 1;
+}
+
+if (sph = 0){
+    hZero = 0;
+}
+else{
+    vZero = 1;
 }
 
 if (dashTimer &lt;= 0){
     global.playerAttacking = false;
     if justDashed{
-        sph = sin(sph) * playerMaxSpeed;
-        spv = sin(spv) * playerMaxSpeed;
+        sph = sign(sph) * playerMaxSpeed * hZero;
+        spv = sign(spv) * playerMaxSpeed * vZero;
         justDashed = false;
         airMoves -= 1;
     }
     canTurn = true;
     canDash = true;
+    canGrav = true;
 }
         
     
@@ -263,7 +285,7 @@ if place_meeting(x+sph,y,par_wall)
         x+=sign(sph);
         }
     sph = 0;
-jumping = false;
+    jumping = false;
     }
 //move the player for the the values of the x and y movement
 x += sph;
