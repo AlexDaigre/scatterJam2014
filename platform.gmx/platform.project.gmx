@@ -30,12 +30,9 @@
     <sprite>sprites\spr_target</sprite>
     <sprite>sprites\spr_dink</sprite>
     <sprite>sprites\spr_hit</sprite>
-<<<<<<< HEAD
-    <sprite>sprites\spr_enemyHealth</sprite>
-=======
     <sprite>sprites\sprBlankCol</sprite>
     <sprite>sprites\sprDashing</sprite>
->>>>>>> origin/master
+    <sprite>sprites\spr_enemyHealth</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -46,11 +43,7 @@
     <script>scripts\scr_collision_spike.gml</script>
     <script>scripts\scr_respawn.gml</script>
     <script>scripts\scr_collisonLift.gml</script>
-<<<<<<< HEAD
-    <script>scripts\scr_respawnEnemy.gml</script>
-=======
     <script>scripts\cameraMovement.gml</script>
->>>>>>> origin/master
   </scripts>
   <objects name="objects">
     <objects name="spikes">
@@ -64,7 +57,6 @@
       <object>objects\obj_rm_test_spikes</object>
       <object>objects\obj_rm_test_laser</object>
       <object>objects\obj_rm_test_camera</object>
-      <object>objects\obj_rm_test_enemy</object>
     </objects>
     <objects name="walls">
       <object>objects\par_wall</object>
