@@ -40,12 +40,19 @@ jumpForce = 13; //determines the max jump height, if you want to change the min 
 jumpTapAdjust = 3; //the higher the number the more the jump is shortened by letting off the spacebar early
 dashTimer = 0;
 canTurn = true;
-canDash = 1;
 justDashed = false;
 
 //health value. set to one for that classic player expiriance
 globalvar playerHealth;
 playerHealth = 10;
+
+//playerstate "attacking var"
+globalvar playerAttacking;
+playerAttacking = false;
+
+//number of moves the player can use
+globalvar airMoves;
+airMoves = 2;
 </string>
           </argument>
         </arguments>
@@ -72,7 +79,7 @@ playerHealth = 10;
 //get player imput from keyboard &amp; mouse
 keyLeft = keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
 keyRight = keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
-keyJump = keyboard_check_direct(vk_space)
+keyJump = keyboard_check_pressed(vk_space)
 keyJumpRelease = keyboard_check_released(vk_space)
 key_shoot = mouse_check_button_pressed(mb_left)
 
@@ -86,17 +93,10 @@ if (global.playerHealth &lt;= 0){
 //determine if the player can jump by determining if they are on the ground or not
 if (place_meeting(x,y+1,par_wall))
     {
-    canJump = 1;
-    canDash = 1;
+    airMoves = 2;
     xpos = x;
     ypos = y;
     } 
-/*
-else
-    {
-    canJump= false;
-    }
-*/    
 
  
     //get movement left
@@ -162,9 +162,9 @@ spv += grv
 //get jumping imput from player and if the player is on the ground move them up
 if keyJump = true
     {
-    if (canJump &gt;= 1)
+    if (airMoves &gt;= 1)
         {
-        canJump -= 1;
+        airMoves -= 1;
         spv -= jumpForce;
         jumping = true;
         audio_play_sound(snd_sproing,8,false);
@@ -188,13 +188,14 @@ if jumping
 
 //starts the dash function
 if key_shoot{
-    if canDash &gt;= 1{
+    if airMoves &gt;= 1{
         dashTimer = 10;
+        airMoves -= 1;
     }
 }
 
 if (dashTimer &gt; 0){
-    canDash -= 1;
+    global.playerAttacking = true;
     spv = 0;
     sph = image_xscale * 20;
     dashTimer -= 1;
@@ -203,6 +204,7 @@ if (dashTimer &gt; 0){
 }
 
 if (dashTimer &lt;= 0){
+    global.playerAttacking = false;
     if justDashed{
         sph = 10 * image_xscale; //10 is the max speed
         justDashed = false;
