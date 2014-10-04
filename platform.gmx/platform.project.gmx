@@ -34,9 +34,15 @@
     <sprite>sprites\sprBlankCol</sprite>
     <sprite>sprites\sprDashing</sprite>
     <sprite>sprites\sprite22</sprite>
-    <sprite>sprites\sprBlankCol</sprite>
-    <sprite>sprites\sprDashing</sprite>
-    <sprite>sprites\spr_enemyHealth</sprite>
+    <sprite>sprites\playerStand</sprite>
+    <sprite>sprites\bossStand</sprite>
+    <sprite>sprites\playerLunge</sprite>
+    <sprite>sprites\sprite28</sprite>
+    <sprite>sprites\playerJump</sprite>
+    <sprite>sprites\playerWalk</sprite>
+    <sprite>sprites\ground</sprite>
+    <sprite>sprites\sprite33</sprite>
+    <sprite>sprites\sprite34</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -88,7 +94,12 @@
     </objects>
     <objects name="mobs">
       <object>objects\par_mob</object>
-      <object>objects\obj_trainingTarget</object>
+      <object>objects\trainingTarget1</object>
+      <object>objects\trainingTarget2</object>
+      <object>objects\trainingTarget3</object>
+      <object>objects\trainingTarget4</object>
+      <object>objects\trainingTarget5</object>
+      <object>objects\bossNass</object>
     </objects>
     <object>objects\enemyOne</object>
     <object>objects\enemyRespawner</object>
@@ -98,7 +109,6 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\sizeDemo</room>
-    <room>rooms\newMovementDemo</room>
     <room>rooms\rm_test_enemy</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
@@ -116,7 +126,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41916.896676412</constant>
+    <constant name="GM_build_date">41916.9807306018</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>

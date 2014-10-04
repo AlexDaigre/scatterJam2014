@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>if place_meeting(x,y,obj_player){
     if global.playerAttacking{
-        global.airMoves += 1;
+        global.airMoves += 5;
         visible = false;
         mask_index = sprBlankCol;
         respawnTimer = 10;
