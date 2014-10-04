@@ -196,7 +196,7 @@ if key_shoot{
 if (dashTimer &gt; 0){
     canDash -= 1;
     spv = 0;
-    sph = image_xscale * 10;
+    sph = image_xscale * 20;
     dashTimer -= 1;
     canTurn = false;
     justDashed = true;
