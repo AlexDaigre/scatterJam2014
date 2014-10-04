@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>11</kind>
-            <room>rm_test_main</room>
+            <room>newMovementDemo</room>
           </argument>
         </arguments>
       </action>

@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>spv = 0;
 sph = 0;
-grv = 1;
+grv = 0.5;
 grounded = false;
 xpos = x
 ypos = y
@@ -36,8 +36,8 @@ jumping = false
 playerSpeed = 1;
 playerBrake = 2;
 playerFriction = 1;
-jumpForce = 13; //determines the max jump height, if you want to change the min hight increase jumpTapAdjust
-jumpTapAdjust = 3; //the higher the number the more the jump is shortened by letting off the spacebar early
+jumpForce = 15; //determines the max jump height, if you want to change the min hight increase jumpTapAdjust
+jumpTapAdjust = 5; //the higher the number the more the jump is shortened by letting off the spacebar early
 dashTimer = 0;
 canTurn = true;
 justDashed = false;
@@ -165,7 +165,7 @@ if keyJump = true
     if (airMoves &gt;= 1)
         {
         airMoves -= 1;
-        spv -= jumpForce;
+        spv = -1 * jumpForce;
         jumping = true;
         audio_play_sound(snd_sproing,8,false);
         }

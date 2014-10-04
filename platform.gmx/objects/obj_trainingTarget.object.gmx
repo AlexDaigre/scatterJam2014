@@ -27,7 +27,7 @@
             <kind>1</kind>
             <string>if global.playerAttacking{
     instance_destroy();
-    global.airMoves ++;
+    global.airMoves += 1;
 }
 if !global.playerAttacking{
     global.playerHealth -= 100;
