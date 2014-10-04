@@ -36,6 +36,7 @@
   <backgrounds name="background"/>
   <paths name="paths">
     <path>paths\path0</path>
+    <path>paths\SpringFence</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\scr_collision_spike.gml</script>
@@ -84,8 +85,12 @@
     </objects>
     <object>objects\enemyOne</object>
     <object>objects\enemyRespawner</object>
+    <objects name="Enemy">
+      <object>objects\obj_Spring</object>
+    </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_test_enemy</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
