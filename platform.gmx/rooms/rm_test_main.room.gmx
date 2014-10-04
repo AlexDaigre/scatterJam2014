@@ -109,7 +109,8 @@
     <instance objName="obj_wall_red" x="-32" y="0" name="inst_8D739234" locked="0" code="" scaleX="22" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="-32" y="0" name="inst_7E2462A0" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
     <instance objName="obj_rm_test_shooting" x="608" y="32" name="inst_CED18C9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_test_enemy" x="0" y="288" name="inst_90C06391" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="&lt;undefined&gt;" x="0" y="288" name="inst_90C06391" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rm_test_enemy" x="0" y="288" name="inst_8D519027" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

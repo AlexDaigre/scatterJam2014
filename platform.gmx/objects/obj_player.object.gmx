@@ -41,6 +41,9 @@ playerMaxSpeed = 10; //this is the max speed a player can travel
 globalvar playerHealth;
 playerHealth = 10;
 
+globalvar playerMaxHealth;
+playerMaxHealth = 10;
+
 //number of moves the player can use initially(without getting any kills)
 globalvar airMoves;
 airMoves = 2;

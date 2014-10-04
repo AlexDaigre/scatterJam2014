@@ -37,6 +37,7 @@
     <sprite>sprites\sprBlankCol</sprite>
     <sprite>sprites\sprDashing</sprite>
     <sprite>sprites\spr_enemyHealth</sprite>
+    <sprite>sprites\spr_PlayerHealth</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths">
@@ -85,6 +86,7 @@
       <object>objects\obj_shot</object>
       <object>objects\obj_dink</object>
       <object>objects\obj_hit</object>
+      <object>objects\obj_PlayerHealth</object>
     </objects>
     <objects name="mobs">
       <object>objects\par_mob</object>
