@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>playerLungeMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -31,11 +31,16 @@ grv = 0.5;  //change to alter the rate of gravity
 playerSpeed = 1; //changes the player speed in both directions
 playerBrake = 2; //changes how much pressing the oposite direction of your movement brakes you. a value of 10 should stop the player instantly
 playerFriction = 1; //changes the rate that a player loses momentum. a value of 10 should stop the player instantly
+globalvar jumpForce; 
 jumpForce = 13; //determines the max jump height, if you want to change the min hight increase jumpTapAdjust
 jumpTapAdjust = 5; //the higher the number the more the jump is shortened by letting off the spacebar early
 totalDash = 10; // this is the amount of time the dash lasts
 dashSpeed = 20; // the speed of the player while in dash
 playerMaxSpeed = 10; //this is the max speed a player can travel
+
+// vulnerable state
+globalvar inv;
+inv = false; 
 
 //health value. set to 1 for that classic player expiriance
 globalvar playerHealth;
@@ -73,9 +78,53 @@ vZero = 1;
 //playerstate "attacking var"
 globalvar playerAttacking;
 playerAttacking = false;
+
+globalvar invul;
+invul =false;
+
+globalvar invulTimer;
+invulTimer = 0;
 </string>
           </argument>
         </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>visible = true;
+inv = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>308</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_timeline_stop</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
       </action>
     </event>
     <event eventtype="3" enumb="0">
@@ -97,19 +146,29 @@ playerAttacking = false;
             <kind>1</kind>
             <string>
 //get player imput from keyboard &amp; mouse
-keyLeft = keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
-keyRight = keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
-keyUp = keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
-keyDown = keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
-keyJumpP = keyboard_check_pressed(vk_space)
-keyJumpD = keyboard_check_direct(vk_space)
-keyJumpRelease = keyboard_check_released(vk_space)
-key_shoot = mouse_check_button_pressed(mb_left)
+keyLeft = keyboard_check(vk_left) //keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
+keyRight = keyboard_check(vk_right) //keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
+keyUp = keyboard_check(vk_up) //keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
+keyDown = keyboard_check(vk_down) //keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
+keyJumpP = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X")) // keyboard_check_pressed(vk_space)
+keyJumpD = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X"))//keyboard_check_direct(vk_space)
+keyJumpRelease = keyboard_check_released(ord("x")) or keyboard_check_released(ord("X"))//keyboard_check_released(vk_space)
+key_shoot = keyboard_check_pressed(ord("z")) or keyboard_check_pressed(ord("Z")) //mouse_check_button_pressed(mb_left)
+keyRestart = keyboard_check_pressed(ord("r")) or keyboard_check_pressed(ord("R"))
+cameraMoveWeight = 10
+cameraOffsetY = 50
 
+
+// Restart Room
+if keyRestart
+{
+    room_restart();
+}
 
 //health code. checks if you are dead, important that this comes before movement becase otherwise you will die and respawn inside the thing killing you
 if (global.playerHealth &lt;= 0){
-    scr_respawn();
+    room_restart();
+    //scr_playerBossRespawn();
 }
 
 
@@ -127,6 +186,7 @@ if canTurn{
     if keyLeft
     {
         sprite_index = playerWalk;
+        mask_index = playerWalk;
         //if the player is already moving left: accelerate left normaly
         if (sph &gt; -playerMaxSpeed) &amp;&amp; (sph &lt; 0)
         {
@@ -150,6 +210,7 @@ if canTurn{
 //get movement right, same process as the left movement
     if keyRight{
         sprite_index = playerWalk;
+        mask_index = playerWalk;
         if (sph &lt; playerMaxSpeed) &amp;&amp; (sph &lt; 0)
         {
             sph += playerSpeed;
@@ -168,6 +229,7 @@ if canTurn{
 //determine if player is entering no movement, and if so break normally
 if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft{
     sprite_index = playerStand;
+    mask_index = playerStand;
     if sph &gt; 0
         {
         sph -= playerFriction;
@@ -206,6 +268,7 @@ if keyboard_check_released(vk_space){
 if jumping
     {
     sprite_index = playerJump;
+    mask_index = playerJump;
     }
     
 
@@ -221,6 +284,7 @@ if key_shoot{
 if (dashTimer &gt; 0){
     dashTimer -= 1;
     sprite_index = playerLunge;
+    mask_index = playerLungeMask;
 
     if canDash{
         if keyRight{
@@ -282,6 +346,8 @@ if (dashTimer &lt;= 0){
     canTurn = true;
     canDash = true;
     canGrav = true;
+    if jumping mask_index = playerJump
+    else mask_index = playerStand
     global.playerAttacking = false;
     if justDashed{
         sph = sign(sph) * playerMaxSpeed * hZero;
@@ -321,8 +387,24 @@ if place_meeting(x+sph,y,par_wall)
 //move the player for the the values of the x and y movement
 x += sph;
 
+if instance_exists(cameraBox)
+    {
+       cameraTargetX = cameraMoveWeight * (x+sph-cameraBox.x)
+       cameraTargetY = cameraMoveWeight * (y+spv+cameraOffsetY-cameraBox.y)
+       cameraBox.x += cameraTargetX
+       cameraBox.y += cameraTargetY
+    }
 
-//cameraMovement();
+cameraMovement();
+
+
+if global.invulTimer &gt;0{
+    invulTimer -= 1;
+    global.invul = true;
+}
+if global.invulTimer &lt;=0{
+    global.invul = false;
+}
 /*
 view_xview[0] += (((x + (image_xscale -100)) + view_wview[0]/2) - view_xview[0]) *0.09;
 view_yview[0] += ((y- view_hview[0]/2) - view_yview[0]) *0.09;
@@ -381,45 +463,128 @@ if key_shoot
       </action>
       <action>
         <libid>1</libid>
-        <id>321</id>
+        <id>331</id>
         <kind>0</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>0</useapplyto>
         <exetype>1</exetype>
-        <functionname>action_message</functionname>
+        <functionname>action_restart_game</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Spring">
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>You Are Dead.  Watch out for Falls.</string>
+            <kind>0</kind>
+            <string>inv</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
       <action>
         <libid>1</libid>
-        <id>611</id>
-        <kind>6</kind>
-        <userelative>-1</userelative>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>305</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_timeline_set</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>14</kind>
+            <timeline>tm_Flash</timeline>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
         <isquestion>0</isquestion>
         <useapplyto>-1</useapplyto>
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>obj_player</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.playerHealth</string>
-          </argument>
-          <argument>
-            <kind>0</kind>
-            <string>0</string>
+            <string>//global.playerHealth -= 1;
+inv = true;
+alarm[0] = 50;
+</string>
           </argument>
         </arguments>
       </action>

@@ -69,6 +69,7 @@
   <scripts name="scripts">
     <script>scripts\scr_collision_spike.gml</script>
     <script>scripts\scr_respawn.gml</script>
+    <script>scripts\scr_playerBossRespawn.gml</script>
     <script>scripts\scr_collisonLift.gml</script>
     <script>scripts\scr_respawnEnemy.gml</script>
     <script>scripts\cameraMovement.gml</script>
@@ -105,6 +106,7 @@
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
+      <object>objects\obj_playerBoss</object>
       <object>objects\obj_shot</object>
       <object>objects\obj_dink</object>
       <object>objects\obj_hit</object>
@@ -131,12 +133,13 @@
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tm_Flash</timeline>
+    <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\bossRoom</room>
     <room>rooms\rm_hardLevel</room>
     <room>rooms\sizeDemo</room>
     <room>rooms\rm_test_enemy</room>
-    <room>rooms\bossRoom</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
@@ -153,7 +156,7 @@
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41917.751642963</constant>
+    <constant name="GM_build_date">41917.8010302662</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'100'</constant>
   </constants>

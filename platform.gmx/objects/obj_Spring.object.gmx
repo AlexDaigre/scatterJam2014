@@ -173,13 +173,13 @@ else
             alarm[0] = 90;
         
         }
-        
+        /*
         if (global.playerHealth = 0)
         {               
             scr_respawn();
                  
         }
-       
+       */
     }
         
         //vsp = -jumpspeed;
