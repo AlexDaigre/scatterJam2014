@@ -144,6 +144,7 @@
         <room>rooms\rm_test_spike</room>
       </rooms>
     </rooms>
+    <room>rooms\room_lvl</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41917.1258430903</constant>
