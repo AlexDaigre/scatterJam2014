@@ -171,6 +171,13 @@ else
              //instance_destroy()
             global.playerHealth -=1;
             alarm[0] = 90;
+        
+        }
+        
+        if (global.playerHealth = 0)
+        {               
+            room_restart();
+                 
         }
        
     }
