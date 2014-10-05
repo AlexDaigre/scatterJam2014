@@ -137,8 +137,8 @@
     <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_test_enemy</room>
     <room>rooms\bossRoom</room>
+    <room>rooms\rm_test_enemy</room>
     <room>rooms\sizeDemo</room>
     <room>rooms\rm_hardLevel</room>
     <room>rooms\newMovementDemo</room>
