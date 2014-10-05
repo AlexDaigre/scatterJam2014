@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>timeline1</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -62,6 +62,7 @@
             <string>if place_meeting(x,y,obj_playerBoss){
     if !global.inv{
         global.playerHealth -= 2;
+        audio_play_sound(sndPlayerDamage,8,false);
     }
 }
 
