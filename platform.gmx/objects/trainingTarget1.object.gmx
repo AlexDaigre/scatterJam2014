@@ -53,11 +53,13 @@
         global.airMoves += 1;
         visible = false;
         mask_index = sprBlankCol;
-        respawnTimer = 10;
+        respawnTimer = 30;
     }
 
     if !global.playerAttacking{
-        global.playerHealth -= 100;
+        if !global.invul{
+            global.playerHealth -= 100;
+            }
     }
 }
 

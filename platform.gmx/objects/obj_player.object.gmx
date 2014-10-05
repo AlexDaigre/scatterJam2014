@@ -73,6 +73,12 @@ vZero = 1;
 //playerstate "attacking var"
 globalvar playerAttacking;
 playerAttacking = false;
+
+globalvar invul;
+invul =false;
+
+globalvar invulTimer;
+invulTimer = 0;
 </string>
           </argument>
         </arguments>
@@ -323,6 +329,15 @@ x += sph;
 
 
 cameraMovement();
+
+
+if global.invulTimer &gt;0{
+    invulTimer -= 1;
+    global.invul = true;
+}
+if global.invulTimer &lt;=0{
+    global.invul = false;
+}
 /*
 view_xview[0] += (((x + (image_xscale -100)) + view_wview[0]/2) - view_xview[0]) *0.09;
 view_yview[0] += ((y- view_hview[0]/2) - view_yview[0]) *0.09;
