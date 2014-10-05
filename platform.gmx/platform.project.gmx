@@ -9,6 +9,17 @@
     <sound>sound\snd_hit</sound>
     <sound>sound\snd_pew</sound>
     <sound>sound\snd_sproing</sound>
+    <sound>sound\snd_bossDies</sound>
+    <sound>sound\sndEnemyDies</sound>
+    <sound>sound\sndSlinkySound</sound>
+    <sound>sound\sndWingFlap</sound>
+    <sound>sound\sndChooChoo</sound>
+    <sound>sound\sndBossIntro</sound>
+    <sound>sound\sndBossTheme</sound>
+    <sound>sound\sndEndingTheme</sound>
+    <sound>sound\sndGameOver</sound>
+    <sound>sound\sndGameplayMusic</sound>
+    <sound>sound\sndTitleMusic</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\anim_playerIdle</sprite>
@@ -56,7 +67,23 @@
     <sprite>sprites\playerLungeMask</sprite>
     <sprite>sprites\bossSpot</sprite>
     <sprite>sprites\sprite44</sprite>
-    <sprite>sprites\sprite45</sprite>
+    <sprite>sprites\sprIntroRoom</sprite>
+    <sprite>sprites\sprBossIntro</sprite>
+    <sprite>sprites\sprWin</sprite>
+    <sprite>sprites\sprCredits1</sprite>
+    <sprite>sprites\sprCredits2</sprite>
+    <sprite>sprites\sprCredits3</sprite>
+    <sprite>sprites\sprCredits4</sprite>
+    <sprite>sprites\sprCredits5</sprite>
+    <sprite>sprites\sprCredits6</sprite>
+    <sprite>sprites\sprCredits7</sprite>
+    <sprite>sprites\sprCredits8</sprite>
+    <sprite>sprites\sprButton1</sprite>
+    <sprite>sprites\sprButton2</sprite>
+    <sprite>sprites\sprLever1</sprite>
+    <sprite>sprites\sprLever2</sprite>
+    <sprite>sprites\sprMenue</sprite>
+    <sprite>sprites\spr_button</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -88,6 +115,7 @@
       <object>objects\obj_rm_test_laser</object>
       <object>objects\obj_rm_test_camera</object>
       <object>objects\obj_rm_test_enemy</object>
+      <object>objects\objRmBossLevel</object>
     </objects>
     <objects name="walls">
       <object>objects\par_wall</object>
@@ -104,6 +132,8 @@
     <objects name="Menue assests">
       <object>objects\obj_play</object>
       <object>objects\obj_title</object>
+      <object>objects\objPlay</object>
+      <object>objects\objCredits</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -131,6 +161,11 @@
       <object>objects\obj_Spring</object>
     </objects>
     <object>objects\cameraBox</object>
+    <object>objects\objIntroRoom</object>
+    <object>objects\objBossIntro</object>
+    <object>objects\objWinScreen</object>
+    <object>objects\menueScreen</object>
+    <object>objects\creds</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tm_Flash</timeline>
@@ -140,24 +175,34 @@
     <room>rooms\bossRoom</room>
     <room>rooms\rm_test_enemy</room>
     <room>rooms\sizeDemo</room>
+=======
+    <room>rooms\menue</room>
+    <room>rooms\introRoom</room>
+>>>>>>> origin/master
     <room>rooms\rm_hardLevel</room>
-    <room>rooms\newMovementDemo</room>
-    <rooms name="menu">
-      <room>rooms\menu_start</room>
-    </rooms>
+    <room>rooms\bossInto</room>
+    <room>rooms\bossRoom</room>
+    <room>rooms\winScreen</room>
+    <room>rooms\credits</room>
     <rooms name="test">
+      <rooms name="menu">
+        <room>rooms\menu_start</room>
+      </rooms>
       <room>rooms\rm_test_main</room>
       <room>rooms\rm_test_laser</room>
+      <room>rooms\newMovementDemo</room>
       <room>rooms\rm_test_jumpArc</room>
+      <room>rooms\rm_test_enemy</room>
       <room>rooms\rm_test_camera</room>
       <room>rooms\rm_testShooting</room>
+      <room>rooms\sizeDemo</room>
       <rooms name="not in use">
         <room>rooms\rm_test_spike</room>
       </rooms>
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41917.8258515741</constant>
+    <constant name="GM_build_date">41917.8614315972</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
