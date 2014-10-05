@@ -87,7 +87,7 @@
     <instance objName="obj_wall_red" x="544" y="320" name="inst_84E32F33" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="576" y="320" name="inst_1CC57B31" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="608" y="320" name="inst_856E6CA0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="320" y="64" name="inst_D2EA30DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="320" y="96" name="inst_D2EA30DA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="0" y="448" name="inst_D9FBA73D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="64" y="448" name="inst_F80A8392" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="32" y="448" name="inst_50CF6B13" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -102,12 +102,14 @@
     <instance objName="obj_wall_red" x="288" y="384" name="inst_CB26A6A9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="256" y="384" name="inst_831C605D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="224" y="384" name="inst_3DC6EF83" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_test_laser" x="0" y="0" name="inst_E687EDC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_test_jumpArc" x="576" y="128" name="inst_02F7128E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_test_camera" x="0" y="128" name="inst_549CC30D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_test_shooting" x="576" y="0" name="inst_CED18C9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_rm_test_enemy" x="0" y="256" name="inst_8D519027" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rm_test_laser" x="0" y="32" name="inst_E687EDC9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rm_test_jumpArc" x="608" y="160" name="inst_02F7128E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rm_test_camera" x="0" y="160" name="inst_549CC30D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_red" x="640" y="0" name="inst_5F167AC4" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wall_red" x="-32" y="0" name="inst_8D739234" locked="0" code="" scaleX="22" scaleY="-1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="-32" y="0" name="inst_7E2462A0" locked="0" code="" scaleX="1" scaleY="15" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rm_test_shooting" x="608" y="32" name="inst_CED18C9F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_rm_test_enemy" x="0" y="288" name="inst_8D519027" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
