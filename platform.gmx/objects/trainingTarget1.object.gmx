@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>respawnTimer = 0;
+            <string>globalvar respawnTimer;
+respawnTimer = 0;
 </string>
           </argument>
         </arguments>
@@ -64,7 +65,7 @@
 }
 
 if (respawnTimer &gt; 0){
-    respawnTimer -=1;
+    //respawnTimer -=1;
 }
 if (respawnTimer &lt;= 0){
     mask_index = sprite34;
