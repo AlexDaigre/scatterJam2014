@@ -89,7 +89,42 @@ inv = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>if (playerAttacking = true)
+{
+    bossHealth -= 1;
+    alarm[0] = 90;
+   /* if hitpoints = 0
+    {
+        instance_destroy();
+    }*/
+}  
+/*  
+else
+    {
+    with(obj_player)
+    {
+        if (global.inv = false)
+        {
+             //instance_destroy()
+            global.playerHealth -=1;
+            alarm[0] = 90;
+        
+        }
+        
+        if (global.playerHealth = 0)
+        {               
+            scr_respawn();
+                 
+        }
+       
+    }
+        
+        //vsp = -jumpspeed;
+    } */ 
+
+    //instance_create(x -100, y, obj_player)
+    
+    
 
 
 
@@ -225,7 +260,7 @@ if bossHealth &lt;= 0{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.playerHealth -= 1;
+            <string>global.bossHealth -= 1;
 inv = true;
 alarm[0] = 50;
 </string>
