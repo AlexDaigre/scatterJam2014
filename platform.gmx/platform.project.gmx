@@ -84,6 +84,7 @@
     <sprite>sprites\sprLever2</sprite>
     <sprite>sprites\sprMenue</sprite>
     <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\sprControlls</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -133,6 +134,7 @@
       <object>objects\obj_play</object>
       <object>objects\obj_title</object>
       <object>objects\objPlay</object>
+      <object>objects\objControll</object>
       <object>objects\objCredits</object>
     </objects>
     <objects name="Player">
@@ -166,6 +168,7 @@
     <object>objects\objWinScreen</object>
     <object>objects\menueScreen</object>
     <object>objects\creds</object>
+    <object>objects\controllScreen</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tm_Flash</timeline>
@@ -184,6 +187,7 @@
     <room>rooms\bossRoom</room>
     <room>rooms\winScreen</room>
     <room>rooms\credits</room>
+    <room>rooms\rmControlls</room>
     <rooms name="test">
       <rooms name="menu">
         <room>rooms\menu_start</room>
@@ -202,7 +206,7 @@
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41917.8614315972</constant>
+    <constant name="GM_build_date">41917.8880296644</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
