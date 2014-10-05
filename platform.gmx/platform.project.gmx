@@ -118,8 +118,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\sizeDemo</room>
     <room>rooms\rm_test_enemy</room>
+    <room>rooms\sizeDemo</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
