@@ -6,7 +6,7 @@
   <depth>0</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <maskName>playerLungeMask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -146,16 +146,17 @@ inv = false;
             <kind>1</kind>
             <string>
 //get player imput from keyboard &amp; mouse
-keyLeft = keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
-keyRight = keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
-keyUp = keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
-keyDown = keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
-keyRestart = keyboard_check_direct(ord("r")) or keyboard_check_direct(ord("R"))
-keyJumpP = keyboard_check_pressed(vk_space)
-keyJumpD = keyboard_check_direct(vk_space)
-keyJumpRelease = keyboard_check_released(vk_space)
-key_shoot = mouse_check_button_pressed(mb_left)
-
+keyLeft = keyboard_check(vk_left) //keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
+keyRight = keyboard_check(vk_right) //keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
+keyUp = keyboard_check(vk_up) //keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
+keyDown = keyboard_check(vk_down) //keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
+keyJumpP = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X")) // keyboard_check_pressed(vk_space)
+keyJumpD = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X"))//keyboard_check_direct(vk_space)
+keyJumpRelease = keyboard_check_released(ord("x")) or keyboard_check_released(ord("X"))//keyboard_check_released(vk_space)
+key_shoot = keyboard_check_pressed(ord("z")) or keyboard_check_pressed(ord("Z")) //mouse_check_button_pressed(mb_left)
+keyRestart = keyboard_check_pressed(ord("r"))
+cameraMoveWeight = 10
+cameraOffsetY = 50
 
 
 // Restart Room
@@ -184,6 +185,7 @@ if canTurn{
     if keyLeft
     {
         sprite_index = playerWalk;
+        mask_index = playerWalk;
         //if the player is already moving left: accelerate left normaly
         if (sph &gt; -playerMaxSpeed) &amp;&amp; (sph &lt; 0)
         {
@@ -207,6 +209,7 @@ if canTurn{
 //get movement right, same process as the left movement
     if keyRight{
         sprite_index = playerWalk;
+        mask_index = playerWalk;
         if (sph &lt; playerMaxSpeed) &amp;&amp; (sph &lt; 0)
         {
             sph += playerSpeed;
@@ -225,6 +228,7 @@ if canTurn{
 //determine if player is entering no movement, and if so break normally
 if keyRight &amp;&amp; keyLeft or !keyRight &amp;&amp; !keyLeft{
     sprite_index = playerStand;
+    mask_index = playerStand;
     if sph &gt; 0
         {
         sph -= playerFriction;
@@ -263,6 +267,7 @@ if keyboard_check_released(vk_space){
 if jumping
     {
     sprite_index = playerJump;
+    mask_index = playerJump;
     }
     
 
@@ -278,6 +283,7 @@ if key_shoot{
 if (dashTimer &gt; 0){
     dashTimer -= 1;
     sprite_index = playerLunge;
+    mask_index = playerLungeMask;
 
     if canDash{
         if keyRight{
@@ -339,6 +345,8 @@ if (dashTimer &lt;= 0){
     canTurn = true;
     canDash = true;
     canGrav = true;
+    if jumping mask_index = playerJump
+    else mask_index = playerStand
     global.playerAttacking = false;
     if justDashed{
         sph = sign(sph) * playerMaxSpeed * hZero;
@@ -378,6 +386,13 @@ if place_meeting(x+sph,y,par_wall)
 //move the player for the the values of the x and y movement
 x += sph;
 
+if instance_exists(cameraBox)
+    {
+       cameraTargetX = cameraMoveWeight * (x+sph-cameraBox.x)
+       cameraTargetY = cameraMoveWeight * (y+spv+cameraOffsetY-cameraBox.y)
+       cameraBox.x += cameraTargetX
+       cameraBox.y += cameraTargetY
+    }
 
 cameraMovement();
 
