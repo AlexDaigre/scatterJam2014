@@ -134,8 +134,8 @@
   </timelines>
   <rooms name="rooms">
     <room>rooms\rm_hardLevel</room>
-    <room>rooms\rm_test_enemy</room>
     <room>rooms\sizeDemo</room>
+    <room>rooms\rm_test_enemy</room>
     <room>rooms\bossRoom</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
@@ -154,6 +154,7 @@
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41917.7361096065</constant>
+    <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>

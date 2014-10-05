@@ -54,7 +54,7 @@ respawnTimer = 0;
         global.airMoves += 1;
         visible = false;
         mask_index = sprBlankCol;
-        respawnTimer = 30;
+        respawnTimer = 300;
     }
 
     if !global.playerAttacking{
