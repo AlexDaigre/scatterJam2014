@@ -322,7 +322,7 @@ if place_meeting(x+sph,y,par_wall)
 x += sph;
 
 
-cameraMovement();
+//cameraMovement();
 /*
 view_xview[0] += (((x + (image_xscale -100)) + view_wview[0]/2) - view_xview[0]) *0.09;
 view_yview[0] += ((y- view_hview[0]/2) - view_yview[0]) *0.09;

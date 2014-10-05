@@ -44,11 +44,15 @@
     <sprite>sprites\sprite33</sprite>
     <sprite>sprites\sprite34</sprite>
     <sprite>sprites\spr_PlayerHealth</sprite>
+    <sprite>sprites\spr_airMoves</sprite>
     <sprite>sprites\brickTile</sprite>
     <sprite>sprites\a1</sprite>
     <sprite>sprites\a2</sprite>
     <sprite>sprites\a3</sprite>
     <sprite>sprites\wall</sprite>
+    <sprite>sprites\sprite39</sprite>
+    <sprite>sprites\stillFist</sprite>
+    <sprite>sprites\moveingfist</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -56,6 +60,8 @@
   <paths name="paths">
     <path>paths\path0</path>
     <path>paths\SpringFence</path>
+    <path>paths\path2</path>
+    <path>paths\fistPath</path>
   </paths>
   <scripts name="scripts">
     <script>scripts\scr_collision_spike.gml</script>
@@ -96,10 +102,12 @@
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
+      <object>objects\obj_playerBoss</object>
       <object>objects\obj_shot</object>
       <object>objects\obj_dink</object>
       <object>objects\obj_hit</object>
       <object>objects\obj_PlayerHealth</object>
+      <object>objects\obj_playerMoves</object>
     </objects>
     <objects name="mobs">
       <object>objects\par_mob</object>
@@ -109,6 +117,8 @@
       <object>objects\trainingTarget4</object>
       <object>objects\trainingTarget5</object>
       <object>objects\bossNass</object>
+      <object>objects\bossFist</object>
+      <object>objects\bossPilot</object>
     </objects>
     <object>objects\enemyOne</object>
     <object>objects\enemyRespawner</object>
@@ -117,6 +127,7 @@
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\bossRoom</room>
     <room>rooms\sizeDemo</room>
     <room>rooms\rm_test_enemy</room>
     <room>rooms\newMovementDemo</room>
@@ -135,7 +146,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41917.0696670718</constant>
+    <constant name="GM_build_date">41917.1258430903</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
