@@ -136,6 +136,7 @@
     <room>rooms\sizeDemo</room>
     <room>rooms\rm_hardLevel</room>
     <room>rooms\rm_test_enemy</room>
+    <room>rooms\rm_hardLevel</room>
     <room>rooms\bossRoom</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
