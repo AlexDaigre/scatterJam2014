@@ -610,7 +610,7 @@ if key_shoot
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.playerHealth -= 1;
+            <string>//global.playerHealth -= 1;
 inv = true;
 alarm[0] = 50;
 </string>
