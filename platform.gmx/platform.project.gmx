@@ -43,9 +43,6 @@
     <sprite>sprites\ground</sprite>
     <sprite>sprites\sprite33</sprite>
     <sprite>sprites\sprite34</sprite>
-    <sprite>sprites\sprBlankCol</sprite>
-    <sprite>sprites\sprDashing</sprite>
-    <sprite>sprites\spr_enemyHealth</sprite>
     <sprite>sprites\spr_PlayerHealth</sprite>
   </sprites>
   <backgrounds name="background"/>
@@ -113,8 +110,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\sizeDemo</room>
     <room>rooms\rm_test_enemy</room>
+    <room>rooms\sizeDemo</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
