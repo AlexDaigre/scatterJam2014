@@ -132,8 +132,8 @@
     <timeline>timelines\tm_Flash</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_hardLevel</room>
     <room>rooms\rm_test_enemy</room>
+    <room>rooms\rm_hardLevel</room>
     <room>rooms\bossRoom</room>
     <room>rooms\sizeDemo</room>
     <room>rooms\newMovementDemo</room>
