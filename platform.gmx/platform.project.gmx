@@ -48,6 +48,7 @@
     <sprite>sprites\a1</sprite>
     <sprite>sprites\a2</sprite>
     <sprite>sprites\a3</sprite>
+    <sprite>sprites\wall</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -80,8 +81,6 @@
     <objects name="walls">
       <object>objects\par_wall</object>
       <object>objects\obj_wall_red</object>
-      <object>objects\object33</object>
-      <object>objects\object32</object>
     </objects>
     <objects name="Laser">
       <object>objects\par_laser</object>
@@ -118,8 +117,8 @@
     </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\rm_test_enemy</room>
     <room>rooms\sizeDemo</room>
+    <room>rooms\rm_test_enemy</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
@@ -136,7 +135,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41917.0573804167</constant>
+    <constant name="GM_build_date">41917.0696670718</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
