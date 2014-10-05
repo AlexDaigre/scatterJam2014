@@ -154,6 +154,7 @@ keyJumpP = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X")) 
 keyJumpD = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X"))//keyboard_check_direct(vk_space)
 keyJumpRelease = keyboard_check_released(ord("x")) or keyboard_check_released(ord("X"))//keyboard_check_released(vk_space)
 key_shoot = keyboard_check_pressed(ord("z")) or keyboard_check_pressed(ord("Z")) //mouse_check_button_pressed(mb_left)
+keyRestart = keyboard_check_pressed(ord("r"))
 cameraMoveWeight = 10
 cameraOffsetY = 50
 

@@ -55,6 +55,7 @@
     <sprite>sprites\moveingfist</sprite>
     <sprite>sprites\playerLungeMask</sprite>
     <sprite>sprites\bossSpot</sprite>
+    <sprite>sprites\sprite44</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -132,10 +133,10 @@
     <timeline>timelines\tm_Flash</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\sizeDemo</room>
     <room>rooms\rm_hardLevel</room>
     <room>rooms\rm_test_enemy</room>
     <room>rooms\bossRoom</room>
-    <room>rooms\sizeDemo</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>
@@ -152,7 +153,7 @@
     </rooms>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41917.5794903241</constant>
+    <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'100'</constant>
   </constants>
   <help>
