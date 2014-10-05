@@ -70,7 +70,20 @@
     <sprite>sprites\sprIntroRoom</sprite>
     <sprite>sprites\sprBossIntro</sprite>
     <sprite>sprites\sprWin</sprite>
-    <sprite>sprites\sprite45</sprite>
+    <sprite>sprites\sprCredits1</sprite>
+    <sprite>sprites\sprCredits2</sprite>
+    <sprite>sprites\sprCredits3</sprite>
+    <sprite>sprites\sprCredits4</sprite>
+    <sprite>sprites\sprCredits5</sprite>
+    <sprite>sprites\sprCredits6</sprite>
+    <sprite>sprites\sprCredits7</sprite>
+    <sprite>sprites\sprCredits8</sprite>
+    <sprite>sprites\sprButton1</sprite>
+    <sprite>sprites\sprButton2</sprite>
+    <sprite>sprites\sprLever1</sprite>
+    <sprite>sprites\sprLever2</sprite>
+    <sprite>sprites\sprMenue</sprite>
+    <sprite>sprites\spr_button</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -102,6 +115,7 @@
       <object>objects\obj_rm_test_laser</object>
       <object>objects\obj_rm_test_camera</object>
       <object>objects\obj_rm_test_enemy</object>
+      <object>objects\objRmBossLevel</object>
     </objects>
     <objects name="walls">
       <object>objects\par_wall</object>
@@ -118,6 +132,8 @@
     <objects name="Menue assests">
       <object>objects\obj_play</object>
       <object>objects\obj_title</object>
+      <object>objects\objPlay</object>
+      <object>objects\objCredits</object>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
@@ -148,6 +164,8 @@
     <object>objects\objIntroRoom</object>
     <object>objects\objBossIntro</object>
     <object>objects\objWinScreen</object>
+    <object>objects\menueScreen</object>
+    <object>objects\creds</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tm_Flash</timeline>

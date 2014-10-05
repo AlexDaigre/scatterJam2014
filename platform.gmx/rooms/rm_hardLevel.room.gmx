@@ -264,6 +264,7 @@
     <instance objName="obj_laserVir" x="1792" y="960" name="inst_5389E8B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_PlayerHealth" x="832" y="384" name="inst_5B74D7BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_playerMoves" x="992" y="384" name="inst_756C082E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="objRmBossLevel" x="2592" y="1024" name="inst_DF9DBD09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
