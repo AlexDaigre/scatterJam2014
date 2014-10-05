@@ -109,7 +109,7 @@ instance_create(250,800,trainingTarget1);
         <arguments>
           <argument>
             <kind>5</kind>
-            <sprite>-100</sprite>
+            <sprite>moveingfist</sprite>
           </argument>
           <argument>
             <kind>0</kind>
@@ -216,7 +216,7 @@ instance_create(250,800,trainingTarget1);
         <arguments>
           <argument>
             <kind>5</kind>
-            <sprite>-100</sprite>
+            <sprite>stillFist</sprite>
           </argument>
           <argument>
             <kind>0</kind>

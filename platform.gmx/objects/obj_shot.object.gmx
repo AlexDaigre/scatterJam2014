@@ -46,7 +46,7 @@
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>-100</sound>
+            <sound>snd_pew</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -85,7 +85,6 @@ if place_meeting(x,y,par_wall)
 if place_meeting(x,y,obj_playerBoss){
     if !global.inv{
         global.playerHealth -= 2;
-        audio_play_sound(sndPlayerDamage,8,false);
     }
 }
 </string>

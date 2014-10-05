@@ -100,7 +100,7 @@ if hitpoints &lt;= 0 instance_destroy();
 if (playerAttacking = true)
 {
     hitpoints -= 1;
-    //audio_play_sound(sndEnemyDies,8,false);
+    
    /* if hitpoints = 0
     {
         instance_destroy();
@@ -116,7 +116,6 @@ else
              //instance_destroy()
             global.playerHealth -=1;
             alarm[0] = 90;
-            audio_play_sound(sndPlayerDamage,8,false);
         
         }
         /*
@@ -161,7 +160,7 @@ else
 if (playerAttacking = true)
 {
     hitpoints -= 1;
-    //audio_play_sound(sndEnemyDies,8,false);
+    
    /* if hitpoints = 0
     {
         instance_destroy();
@@ -176,7 +175,6 @@ else
         {
              //instance_destroy()
             global.playerHealth -=1;
-            audio_play_sound(sndPlayerDamage,8,false);
             alarm[0] = 90;
         
         }
