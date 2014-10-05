@@ -53,6 +53,7 @@
     <sprite>sprites\sprite39</sprite>
     <sprite>sprites\stillFist</sprite>
     <sprite>sprites\moveingfist</sprite>
+    <sprite>sprites\playerLungeMask</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -125,8 +126,10 @@
     <objects name="Enemy">
       <object>objects\obj_Spring</object>
     </objects>
+    <object>objects\cameraBox</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_hardLevel</room>
     <room>rooms\bossRoom</room>
     <room>rooms\sizeDemo</room>
     <room>rooms\rm_test_enemy</room>
@@ -144,7 +147,6 @@
         <room>rooms\rm_test_spike</room>
       </rooms>
     </rooms>
-    <room>rooms\room_lvl</room>
   </rooms>
   <constants number="2">
     <constant name="GM_build_date">41917.1258430903</constant>
