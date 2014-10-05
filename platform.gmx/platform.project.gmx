@@ -126,10 +126,13 @@
       <object>objects\obj_Spring</object>
     </objects>
   </objects>
+  <timelines name="timelines">
+    <timeline>timelines\tm_Flash</timeline>
+  </timelines>
   <rooms name="rooms">
+    <room>rooms\rm_test_enemy</room>
     <room>rooms\bossRoom</room>
     <room>rooms\sizeDemo</room>
-    <room>rooms\rm_test_enemy</room>
     <room>rooms\newMovementDemo</room>
     <rooms name="menu">
       <room>rooms\menu_start</room>

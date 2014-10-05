@@ -19,7 +19,7 @@
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>self</whoName>
+        <whoName>other</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -31,11 +31,16 @@ grv = 0.5;  //change to alter the rate of gravity
 playerSpeed = 1; //changes the player speed in both directions
 playerBrake = 2; //changes how much pressing the oposite direction of your movement brakes you. a value of 10 should stop the player instantly
 playerFriction = 1; //changes the rate that a player loses momentum. a value of 10 should stop the player instantly
+globalvar jumpForce; 
 jumpForce = 13; //determines the max jump height, if you want to change the min hight increase jumpTapAdjust
 jumpTapAdjust = 5; //the higher the number the more the jump is shortened by letting off the spacebar early
 totalDash = 10; // this is the amount of time the dash lasts
 dashSpeed = 20; // the speed of the player while in dash
 playerMaxSpeed = 10; //this is the max speed a player can travel
+
+// vulnerable state
+globalvar inv;
+inv = false; 
 
 //health value. set to 1 for that classic player expiriance
 globalvar playerHealth;
@@ -84,6 +89,44 @@ invulTimer = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>visible = true;
+inv = false;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>308</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_timeline_stop</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -107,11 +150,19 @@ keyLeft = keyboard_check_direct(ord("a"))  or keyboard_check_direct(ord("A"))
 keyRight = keyboard_check_direct(ord("d")) or keyboard_check_direct(ord("D"))
 keyUp = keyboard_check_direct(ord("w")) or keyboard_check_direct(ord("W"))
 keyDown = keyboard_check_direct(ord("s")) or keyboard_check_direct(ord("S"))
+keyRestart = keyboard_check_direct(ord("r")) or keyboard_check_direct(ord("R"))
 keyJumpP = keyboard_check_pressed(vk_space)
 keyJumpD = keyboard_check_direct(vk_space)
 keyJumpRelease = keyboard_check_released(vk_space)
 key_shoot = mouse_check_button_pressed(mb_left)
 
+
+
+// Restart Room
+if keyRestart
+{
+    room_restart();
+}
 
 //health code. checks if you are dead, important that this comes before movement becase otherwise you will die and respawn inside the thing killing you
 if (global.playerHealth &lt;= 0){
@@ -435,6 +486,119 @@ if key_shoot
           <argument>
             <kind>0</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_Spring">
+      <action>
+        <libid>1</libid>
+        <id>612</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if_variable</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>inv</string>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>false</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>305</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_timeline_set</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>14</kind>
+            <timeline>tm_Flash</timeline>
+          </argument>
+          <argument>
+            <kind>0</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.playerHealth -= 1;
+inv = true;
+alarm[0] = 50;
+</string>
           </argument>
         </arguments>
       </action>

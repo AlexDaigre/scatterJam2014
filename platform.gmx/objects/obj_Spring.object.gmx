@@ -60,6 +60,15 @@
             <string>globalvar hitpoints;
 hitpoints = 10;
 
+respawnTimer = 3;
+
+
+
+
+
+
+
+
 /*
 with(obj_player)
 {
@@ -89,28 +98,6 @@ if place_meeting(x + 10, y, obj_player)
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string></string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -128,20 +115,20 @@ if place_meeting(x + 10, y, obj_player)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting( +x, y, obj_Spring )
+            <string>if place_meeting( x &gt; 640, y, obj_Spring )
 {
     instance_create(x+5, y, obj_player)
 
 }
 else
-if place_meeting( -x, y, obj_Spring)
+if place_meeting( x &lt; 640, y, obj_Spring)
 {
     instance_create(x-5, y, obj_player);
 
 }
 
 
-if hitpoints &lt; 0 instance_destroy();
+if hitpoints &lt;= 0 instance_destroy();
 </string>
           </argument>
         </arguments>
@@ -179,14 +166,22 @@ else
     {
     with(obj_player)
     {
-        //instance_destroy()
-        global.playerHealth -=1;
+        if (global.inv = false)
+        {
+             //instance_destroy()
+            global.playerHealth -=1;
+            alarm[0] = 90;
+        }
+       
+    }
+        
+        //vsp = -jumpspeed;
     } 
 
     //instance_create(x -100, y, obj_player)
     
     
-    }
+
 </string>
           </argument>
         </arguments>
