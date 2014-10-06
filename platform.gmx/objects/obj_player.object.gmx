@@ -90,6 +90,26 @@ invulTimer = 0;
       </action>
       <action>
         <libid>1</libid>
+        <id>212</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>sndTitleMusic</sound>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>211</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -182,6 +202,11 @@ keyRestart = keyboard_check_pressed(ord("r")) or keyboard_check_pressed(ord("R")
 cameraMoveWeight = 10
 cameraOffsetY = 50
 
+
+keyskip = keyboard_check_pressed(ord("l")) or keyboard_check_pressed(ord("L"))
+if keyskip{
+    room_goto_next()
+}
 
 // Restart Room
 if keyRestart
@@ -582,7 +607,7 @@ if key_shoot
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>tm_Flash</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -695,7 +720,7 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>tm_Flash</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>

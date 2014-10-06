@@ -9,10 +9,6 @@
     <sound>sound\snd_hit</sound>
     <sound>sound\snd_pew</sound>
     <sound>sound\snd_sproing</sound>
-    <sound>sound\snd_bossDies</sound>
-    <sound>sound\sndEnemyDies</sound>
-    <sound>sound\sndSlinkySound</sound>
-    <sound>sound\sndWingFlap</sound>
     <sound>sound\sndChooChoo</sound>
     <sound>sound\sndBossIntro</sound>
     <sound>sound\sndBossTheme</sound>
@@ -20,6 +16,8 @@
     <sound>sound\sndGameOver</sound>
     <sound>sound\sndGameplayMusic</sound>
     <sound>sound\sndTitleMusic</sound>
+    <sound>sound\sndPlayerDamage</sound>
+    <sound>sound\sndGameMusic</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\anim_playerIdle</sprite>
@@ -196,13 +194,15 @@
       <rooms name="not in use">
         <room>rooms\rm_test_spike</room>
       </rooms>
+      <room>rooms\room21</room>
+      <room>rooms\rm_test_enemy</room>
       <room>rooms\sizeDemo</room>
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41917.9699992477</constant>
+    <constant name="GM_build_date">41917.9148275694</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
-    <constant name="GM_version">'1.0.0.0'</constant>
+    <constant name="GM_version">'1.0.0.4'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

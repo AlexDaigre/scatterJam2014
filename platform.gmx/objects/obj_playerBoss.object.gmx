@@ -90,6 +90,30 @@ invulTimer = 0;
       </action>
       <action>
         <libid>1</libid>
+        <id>301</id>
+        <kind>0</kind>
+        <userelative>-1</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_alarm</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>60</string>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>1</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
         <id>212</id>
         <kind>0</kind>
         <userelative>0</userelative>
@@ -125,10 +149,57 @@ invulTimer = 0;
           <argument>
             <kind>6</kind>
             <sound>sndBossTheme</sound>
+            <sound>sndBossIntro</sound>
           </argument>
           <argument>
             <kind>3</kind>
             <string>0</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>212</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_end_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>sndBossIntro</sound>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>sndBossTheme</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>1</string>
           </argument>
         </arguments>
       </action>
@@ -199,10 +270,14 @@ keyJumpD = keyboard_check_pressed(ord("x")) or keyboard_check_pressed(ord("X"))/
 keyJumpRelease = keyboard_check_released(ord("x")) or keyboard_check_released(ord("X"))//keyboard_check_released(vk_space)
 key_shoot = keyboard_check_pressed(ord("z")) or keyboard_check_pressed(ord("Z")) //mouse_check_button_pressed(mb_left)
 keyRestart = keyboard_check_pressed(ord("r")) or keyboard_check_pressed(ord("R"))
+
 cameraMoveWeight = 10
 cameraOffsetY = 50
 
-
+keyskip = keyboard_check_pressed(ord("l")) or keyboard_check_pressed(ord("L"))
+if keyskip{
+    room_goto_next()
+}
 // Restart Room
 if keyRestart
 {
@@ -338,6 +413,7 @@ if (dashTimer &gt; 0){
             global.playerAttacking = true;
             canTurn = false;
             canDash = false;
+            audio_play_sound(sndChooChoo,8,false);
         }
         else if keyUp{
             spvH = -dashSpeed;
@@ -346,6 +422,7 @@ if (dashTimer &gt; 0){
             global.playerAttacking = true;
             canTurn = false;
             canDash = false;
+            audio_play_sound(sndChooChoo,8,false);
         }
         else if keyLeft{
             sphH = -dashSpeed;
@@ -354,6 +431,7 @@ if (dashTimer &gt; 0){
             global.playerAttacking = true;
             canTurn = false;
             canDash = false;
+            audio_play_sound(sndChooChoo,8,false);
         }
         else if keyDown{
             spvH = dashSpeed;
@@ -362,6 +440,7 @@ if (dashTimer &gt; 0){
             global.playerAttacking = true;
             canTurn = false;
             canDash = false;
+            audio_play_sound(sndChooChoo,8,false);
         }
         else if (!keyLeft &amp;&amp; !keyRight &amp;&amp; !keyUp &amp;&amp; !keyDown){
         dashTimer = 0;
@@ -593,7 +672,7 @@ if key_shoot
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>tm_Flash</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -706,7 +785,7 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>tm_Flash</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -819,7 +898,7 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>tm_Flash</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -932,7 +1011,7 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>tm_Flash</timeline>
+            <timeline>-100</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -987,26 +1066,6 @@ alarm[0] = 50;
       </action>
     </event>
     <event eventtype="4" ename="par_laser">
-      <action>
-        <libid>1</libid>
-        <id>321</id>
-        <kind>0</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_message</functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>2</kind>
-            <string>You Are Dead.  Watch out for Lasers.</string>
-          </argument>
-        </arguments>
-      </action>
       <action>
         <libid>1</libid>
         <id>611</id>
