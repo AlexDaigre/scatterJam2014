@@ -5,86 +5,99 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound">
-    <sound>sound\snd_dink</sound>
-    <sound>sound\snd_hit</sound>
-    <sound>sound\snd_pew</sound>
-    <sound>sound\snd_sproing</sound>
-    <sound>sound\snd_bossDies</sound>
-    <sound>sound\sndEnemyDies</sound>
-    <sound>sound\sndSlinkySound</sound>
-    <sound>sound\sndWingFlap</sound>
-    <sound>sound\sndChooChoo</sound>
-    <sound>sound\sndBossIntro</sound>
-    <sound>sound\sndBossTheme</sound>
-    <sound>sound\sndEndingTheme</sound>
-    <sound>sound\sndGameOver</sound>
-    <sound>sound\sndGameplayMusic</sound>
-    <sound>sound\sndTitleMusic</sound>
+    <sounds name="music">
+      <sound>sound\sndTitleMusic</sound>
+      <sound>sound\sndGameplayMusic</sound>
+      <sound>sound\sndEndingTheme</sound>
+      <sound>sound\sndBossTheme</sound>
+    </sounds>
+    <sounds name="soundEffects">
+      <sound>sound\sndChooChoo</sound>
+      <sound>sound\sndWingFlap</sound>
+      <sound>sound\sndSlinkySound</sound>
+      <sound>sound\sndEnemyDies</sound>
+      <sound>sound\snd_bossDies</sound>
+      <sound>sound\snd_sproing</sound>
+      <sound>sound\snd_pew</sound>
+      <sound>sound\snd_hit</sound>
+      <sound>sound\snd_dink</sound>
+    </sounds>
+    <sounds name="stings">
+      <sound>sound\sndGameOver</sound>
+      <sound>sound\sndBossIntro</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
-    <sprite>sprites\anim_playerIdle</sprite>
-    <sprite>sprites\anim_playerRun</sprite>
-    <sprite>sprites\anim_playerJump</sprite>
-    <sprite>sprites\anim_playerFall</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_lvlEnd</sprite>
-    <sprite>sprites\spr_spikeMiddle</sprite>
-    <sprite>sprites\spr_spikeEndLeft</sprite>
-    <sprite>sprites\spr_spikeEndRight</sprite>
-    <sprite>sprites\spr_laserHor</sprite>
-    <sprite>sprites\spr_laserVir</sprite>
-    <sprite>sprites\spr_lift</sprite>
-    <sprite>sprites\spr_titleBackground</sprite>
-    <sprite>sprites\spr_titleTitle</sprite>
-    <sprite>sprites\spr_play</sprite>
-    <sprite>sprites\spr_shot</sprite>
-    <sprite>sprites\spr_target</sprite>
-    <sprite>sprites\spr_dink</sprite>
-    <sprite>sprites\spr_hit</sprite>
-    <sprite>sprites\spr_enemyHealth</sprite>
-    <sprite>sprites\sprBlankCol</sprite>
-    <sprite>sprites\sprDashing</sprite>
-    <sprite>sprites\sprite22</sprite>
-    <sprite>sprites\playerStand</sprite>
-    <sprite>sprites\bossStand</sprite>
-    <sprite>sprites\playerLunge</sprite>
-    <sprite>sprites\sprite28</sprite>
-    <sprite>sprites\playerJump</sprite>
-    <sprite>sprites\playerWalk</sprite>
-    <sprite>sprites\ground</sprite>
-    <sprite>sprites\sprite33</sprite>
-    <sprite>sprites\sprite34</sprite>
-    <sprite>sprites\spr_PlayerHealth</sprite>
-    <sprite>sprites\spr_airMoves</sprite>
-    <sprite>sprites\brickTile</sprite>
-    <sprite>sprites\a1</sprite>
-    <sprite>sprites\a2</sprite>
-    <sprite>sprites\a3</sprite>
-    <sprite>sprites\wall</sprite>
-    <sprite>sprites\sprite39</sprite>
-    <sprite>sprites\stillFist</sprite>
-    <sprite>sprites\moveingfist</sprite>
-    <sprite>sprites\playerLungeMask</sprite>
-    <sprite>sprites\bossSpot</sprite>
-    <sprite>sprites\sprite44</sprite>
-    <sprite>sprites\sprIntroRoom</sprite>
-    <sprite>sprites\sprBossIntro</sprite>
-    <sprite>sprites\sprWin</sprite>
-    <sprite>sprites\sprCredits1</sprite>
-    <sprite>sprites\sprCredits2</sprite>
-    <sprite>sprites\sprCredits3</sprite>
-    <sprite>sprites\sprCredits4</sprite>
-    <sprite>sprites\sprCredits5</sprite>
-    <sprite>sprites\sprCredits6</sprite>
-    <sprite>sprites\sprCredits7</sprite>
-    <sprite>sprites\sprCredits8</sprite>
-    <sprite>sprites\sprButton1</sprite>
-    <sprite>sprites\sprButton2</sprite>
-    <sprite>sprites\sprLever1</sprite>
-    <sprite>sprites\sprLever2</sprite>
-    <sprite>sprites\sprMenue</sprite>
-    <sprite>sprites\spr_button</sprite>
-    <sprite>sprites\sprControlls</sprite>
+    <sprites name="test">
+      <sprite>sprites\anim_playerIdle</sprite>
+      <sprite>sprites\anim_playerRun</sprite>
+      <sprite>sprites\anim_playerJump</sprite>
+      <sprite>sprites\anim_playerFall</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_spikeMiddle</sprite>
+      <sprite>sprites\spr_spikeEndRight</sprite>
+      <sprite>sprites\spr_spikeEndLeft</sprite>
+      <sprite>sprites\spr_lift</sprite>
+      <sprite>sprites\spr_titleBackground</sprite>
+      <sprite>sprites\spr_titleTitle</sprite>
+      <sprite>sprites\spr_play</sprite>
+      <sprite>sprites\spr_target</sprite>
+      <sprite>sprites\sprDashing</sprite>
+      <sprite>sprites\bossStand</sprite>
+      <sprite>sprites\ground</sprite>
+      <sprite>sprites\brickTile</sprite>
+      <sprite>sprites\a1</sprite>
+      <sprite>sprites\a2</sprite>
+      <sprite>sprites\a3</sprite>
+      <sprite>sprites\sprPlayerLungeOld</sprite>
+    </sprites>
+    <sprites name="player">
+      <sprite>sprites\sprPlayerStand</sprite>
+      <sprite>sprites\sprPlayerJump</sprite>
+      <sprite>sprites\sprPlayerLunge</sprite>
+      <sprite>sprites\sprPlayerWalk</sprite>
+      <sprite>sprites\playerLungeMask</sprite>
+      <sprite>sprites\spr_PlayerHealth</sprite>
+      <sprite>sprites\spr_airMoves</sprite>
+    </sprites>
+    <sprites name="Enemies">
+      <sprite>sprites\stillFist</sprite>
+      <sprite>sprites\moveingfist</sprite>
+      <sprite>sprites\sprBossPilot</sprite>
+      <sprite>sprites\bossBody</sprite>
+      <sprite>sprites\enemy1</sprite>
+      <sprite>sprites\spr_enemyHealth</sprite>
+      <sprite>sprites\sprBlankCol</sprite>
+      <sprite>sprites\spr_shot</sprite>
+      <sprite>sprites\spr_hit</sprite>
+      <sprite>sprites\spr_dink</sprite>
+    </sprites>
+    <sprites name="menueAssets">
+      <sprite>sprites\sprBossIntro</sprite>
+      <sprite>sprites\sprCredits3</sprite>
+      <sprite>sprites\sprCredits4</sprite>
+      <sprite>sprites\sprButton2</sprite>
+      <sprite>sprites\sprCredits2</sprite>
+      <sprite>sprites\sprButton1</sprite>
+      <sprite>sprites\sprCredits8</sprite>
+      <sprite>sprites\sprLever2</sprite>
+      <sprite>sprites\sprLever1</sprite>
+      <sprite>sprites\sprCredits5</sprite>
+      <sprite>sprites\sprMenue</sprite>
+      <sprite>sprites\sprControlls</sprite>
+      <sprite>sprites\sprCredits7</sprite>
+      <sprite>sprites\spr_button</sprite>
+      <sprite>sprites\sprIntroRoom</sprite>
+      <sprite>sprites\sprCredits6</sprite>
+      <sprite>sprites\sprWin</sprite>
+      <sprite>sprites\sprCredits1</sprite>
+    </sprites>
+    <sprites name="levelAssets">
+      <sprite>sprites\wall</sprite>
+      <sprite>sprites\spr_laserVir</sprite>
+      <sprite>sprites\spr_laserHor</sprite>
+      <sprite>sprites\spr_lvlEnd</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -104,19 +117,17 @@
     <script>scripts\cameraMovement.gml</script>
   </scripts>
   <objects name="objects">
-    <objects name="spikes">
-      <object>objects\par_spike</object>
-      <object>objects\obj_spike</object>
-    </objects>
     <objects name="portals">
-      <object>objects\obj_rm_test_main</object>
-      <object>objects\obj_rm_test_shooting</object>
-      <object>objects\obj_rm_test_jumpArc</object>
-      <object>objects\obj_rm_test_spikes</object>
-      <object>objects\obj_rm_test_laser</object>
-      <object>objects\obj_rm_test_camera</object>
-      <object>objects\obj_rm_test_enemy</object>
       <object>objects\objRmBossLevel</object>
+      <objects name="test">
+        <object>objects\obj_rm_test_spikes</object>
+        <object>objects\obj_rm_test_enemy</object>
+        <object>objects\obj_rm_test_jumpArc</object>
+        <object>objects\obj_rm_test_shooting</object>
+        <object>objects\obj_rm_test_main</object>
+        <object>objects\obj_rm_test_camera</object>
+        <object>objects\obj_rm_test_laser</object>
+      </objects>
     </objects>
     <objects name="walls">
       <object>objects\par_wall</object>
@@ -127,48 +138,63 @@
       <object>objects\obj_laserHor</object>
       <object>objects\obj_laserVir</object>
     </objects>
-    <objects name="Lifts">
-      <object>objects\obj_lift</object>
-    </objects>
     <objects name="Menue assests">
-      <object>objects\obj_play</object>
-      <object>objects\obj_title</object>
+      <object>objects\controllScreen</object>
+      <object>objects\menueScreen</object>
+      <object>objects\objIntroRoom</object>
+      <object>objects\creds</object>
+      <object>objects\objWinScreen</object>
+      <object>objects\objBossIntro</object>
       <object>objects\objPlay</object>
       <object>objects\objControll</object>
       <object>objects\objCredits</object>
+      <objects name="test">
+        <object>objects\obj_play</object>
+        <object>objects\obj_title</object>
+      </objects>
     </objects>
     <objects name="Player">
       <object>objects\obj_player</object>
-      <object>objects\obj_playerBoss</object>
-      <object>objects\obj_shot</object>
-      <object>objects\obj_dink</object>
-      <object>objects\obj_hit</object>
-      <object>objects\obj_PlayerHealth</object>
-      <object>objects\obj_playerMoves</object>
+      <objects name="playerGUI">
+        <object>objects\obj_playerMoves</object>
+        <object>objects\obj_PlayerHealth</object>
+      </objects>
+      <object>objects\isBossRoom</object>
+      <object>objects\notBossRoom</object>
+      <objects name="test">
+        <object>objects\obj_player</object>
+      </objects>
     </objects>
     <objects name="mobs">
       <object>objects\par_mob</object>
       <object>objects\trainingTarget1</object>
-      <object>objects\trainingTarget2</object>
-      <object>objects\trainingTarget3</object>
-      <object>objects\trainingTarget4</object>
-      <object>objects\trainingTarget5</object>
-      <object>objects\bossNass</object>
-      <object>objects\bossFist</object>
-      <object>objects\bossPilot</object>
+      <objects name="test">
+        <object>objects\trainingTarget5</object>
+        <object>objects\trainingTarget2</object>
+        <object>objects\trainingTarget4</object>
+        <object>objects\trainingTarget3</object>
+        <object>objects\enemyOne</object>
+        <object>objects\obj_Spring</object>
+      </objects>
+      <objects name="bossBits">
+        <object>objects\bossNass</object>
+        <object>objects\bossFist</object>
+        <object>objects\bossPilot</object>
+        <object>objects\obj_shot</object>
+        <object>objects\obj_dink</object>
+        <object>objects\obj_hit</object>
+      </objects>
     </objects>
-    <object>objects\enemyOne</object>
-    <object>objects\enemyRespawner</object>
-    <objects name="Enemy">
-      <object>objects\obj_Spring</object>
+    <objects name="test">
+      <objects name="Lifts">
+        <object>objects\obj_lift</object>
+      </objects>
+      <objects name="spikes">
+        <object>objects\par_spike</object>
+        <object>objects\obj_spike</object>
+      </objects>
+      <object>objects\cameraBox</object>
     </objects>
-    <object>objects\cameraBox</object>
-    <object>objects\objIntroRoom</object>
-    <object>objects\objBossIntro</object>
-    <object>objects\objWinScreen</object>
-    <object>objects\menueScreen</object>
-    <object>objects\creds</object>
-    <object>objects\controllScreen</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\tm_Flash</timeline>
@@ -200,7 +226,7 @@
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41917.9699992477</constant>
+    <constant name="GM_build_date">41918.9768367824</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>

@@ -17,9 +17,9 @@
     <TextureGroup0>0</TextureGroup0>
   </TextureGroups>
   <For3D>0</For3D>
-  <width>117</width>
+  <width>160</width>
   <height>80</height>
   <frames>
-    <frame index="0">images\playerStand_0.png</frame>
+    <frame index="0">images\sprPlayerJump_0.png</frame>
   </frames>
 </sprite>
