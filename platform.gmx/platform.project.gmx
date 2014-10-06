@@ -175,13 +175,8 @@
     <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\bossRoom</room>
-    <room>rooms\rm_test_enemy</room>
-    <room>rooms\sizeDemo</room>
-=======
     <room>rooms\menue</room>
     <room>rooms\introRoom</room>
->>>>>>> origin/master
     <room>rooms\rm_hardLevel</room>
     <room>rooms\bossInto</room>
     <room>rooms\bossRoom</room>
@@ -196,19 +191,18 @@
       <room>rooms\rm_test_laser</room>
       <room>rooms\newMovementDemo</room>
       <room>rooms\rm_test_jumpArc</room>
-      <room>rooms\rm_test_enemy</room>
       <room>rooms\rm_test_camera</room>
       <room>rooms\rm_testShooting</room>
-      <room>rooms\sizeDemo</room>
       <rooms name="not in use">
         <room>rooms\rm_test_spike</room>
       </rooms>
+      <room>rooms\sizeDemo</room>
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41917.8880296644</constant>
+    <constant name="GM_build_date">41917.9699992477</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
-    <constant name="GM_version">'100'</constant>
+    <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>
