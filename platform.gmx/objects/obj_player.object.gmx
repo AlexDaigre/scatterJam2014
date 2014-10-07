@@ -607,7 +607,7 @@ if key_shoot
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>-100</timeline>
+            <timeline>tm_Flash</timeline>
           </argument>
           <argument>
             <kind>0</kind>
@@ -720,7 +720,7 @@ alarm[0] = 50;
         <arguments>
           <argument>
             <kind>14</kind>
-            <timeline>-100</timeline>
+            <timeline>tm_Flash</timeline>
           </argument>
           <argument>
             <kind>0</kind>

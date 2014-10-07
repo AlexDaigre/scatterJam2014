@@ -173,8 +173,15 @@
     <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
+=======
+    <room>rooms\bossRoom</room>
+    <room>rooms\rm_test_enemy</room>
+    <room>rooms\sizeDemo</room>
+=======
+>>>>>>> parent of e47f372... Boss Works
     <room>rooms\menue</room>
     <room>rooms\introRoom</room>
+>>>>>>> origin/master
     <room>rooms\rm_hardLevel</room>
     <room>rooms\bossInto</room>
     <room>rooms\bossRoom</room>
@@ -189,8 +196,10 @@
       <room>rooms\rm_test_laser</room>
       <room>rooms\newMovementDemo</room>
       <room>rooms\rm_test_jumpArc</room>
+      <room>rooms\rm_test_enemy</room>
       <room>rooms\rm_test_camera</room>
       <room>rooms\rm_testShooting</room>
+      <room>rooms\sizeDemo</room>
       <rooms name="not in use">
         <room>rooms\rm_test_spike</room>
       </rooms>

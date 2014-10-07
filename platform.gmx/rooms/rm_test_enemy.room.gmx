@@ -71,20 +71,8 @@
     <instance objName="obj_wall_red" x="800" y="512" name="inst_43DB815A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="832" y="512" name="inst_C2FE37AF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="864" y="512" name="inst_2CB928C0" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bossPilot" x="544" y="448" name="inst_1D52F068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_playerBoss" x="64" y="448" name="inst_54532A1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bossNass" x="928" y="224" name="inst_F1C9E0AA" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="bossFist" x="768" y="448" name="inst_2CCD5C53" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="256" y="512" name="inst_7BE882B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="224" y="512" name="inst_46CEE30C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="192" y="512" name="inst_D99EBBE9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="160" y="512" name="inst_C8582FF6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="160" y="544" name="inst_4F229E6B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="128" y="544" name="inst_847FFE61" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="128" y="512" name="inst_59266E8F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="96" y="512" name="inst_F5CD5F0E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wall_red" x="32" y="512" name="inst_3778E615" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="3"/>
-    <instance objName="obj_wall_red" x="64" y="512" name="inst_0A9F8636" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="bossPilot" x="672" y="480" name="inst_1D52F068" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_playerBoss" x="352" y="448" name="inst_54532A1C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>
