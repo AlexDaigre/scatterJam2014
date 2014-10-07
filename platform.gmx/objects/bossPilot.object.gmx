@@ -148,15 +148,7 @@ if (bossInvulnerableTimer &lt;= 0){
 }*/
 
 
-if bossHealth &lt;= 0{
-    instance_destroy()
-    with(bossNass){
-        instance_destroy();
-    }
-    with(bossFist){
-        instance_destroy();
-    }
-}
+
 </string>
           </argument>
         </arguments>
@@ -179,12 +171,12 @@ if bossHealth &lt;= 0{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if (playerAttacking = true)
-{
-    bossHealth -= 1;
-    alarm[0] = 50;
-   
-} 
+            <string>
+
+
+
+
+
 </string>
           </argument>
         </arguments>
@@ -279,8 +271,27 @@ if bossHealth &lt;= 0{
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.bossHealth -= 1;
+            <string>if (playerAttacking = true)
+{
+    global.bossHealth -= 1;
+    alarm[0] = 50;
+   
+} 
+
+//global.bossHealth -= 1;
 inv = true;
+alarm[0] = 50;
+
+
+if bossHealth &lt;= 0{
+    instance_destroy()
+    with(bossNass){
+        instance_destroy();
+    }
+    with(bossFist){
+        instance_destroy();
+    }
+}
 </string>
           </argument>
         </arguments>

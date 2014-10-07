@@ -106,7 +106,7 @@ invulTimer = 0;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>sndGameplayMusic</sound>
+            <sound>-100</sound>
           </argument>
         </arguments>
       </action>
@@ -126,7 +126,7 @@ invulTimer = 0;
         <arguments>
           <argument>
             <kind>6</kind>
-            <sound>sndBossTheme</sound>
+            <sound>-100</sound>
           </argument>
           <argument>
             <kind>3</kind>
@@ -451,7 +451,7 @@ if instance_exists(cameraBox)
        cameraBox.y += cameraTargetY
     }
 
-//cameraMovement();
+cameraMovement();
 
 /*
 if global.invulTimer &gt;0{
@@ -546,7 +546,7 @@ if key_shoot
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="4" ename="obj_Spring">
+    <event eventtype="4" ename="obj_shot">
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -772,7 +772,7 @@ alarm[0] = 50;
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="4" ename="trainingTarget1">
+    <event eventtype="4" ename="obj_Spring">
       <action>
         <libid>1</libid>
         <id>612</id>
@@ -885,7 +885,7 @@ alarm[0] = 50;
         <isnot>0</isnot>
       </action>
     </event>
-    <event eventtype="4" ename="obj_shot">
+    <event eventtype="4" ename="trainingTarget1">
       <action>
         <libid>1</libid>
         <id>612</id>

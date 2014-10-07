@@ -59,7 +59,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if place_meeting(x,y,obj_playerBoss){
+            <string>if place_meeting(x,y,obj_player){
     if !global.inv{
         global.playerHealth -= 2;
     }

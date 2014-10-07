@@ -162,7 +162,6 @@
     <instance objName="obj_laserHor" x="1472" y="2176" name="inst_D646A570" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_laserHor" x="1504" y="2176" name="inst_AB29F8F2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_laserHor" x="1536" y="2176" name="inst_2F633200" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_player" x="832" y="2048" name="inst_4E9AF6ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="notBossRoom" x="96" y="128" name="inst_E859A4A7" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="2592" y="1088" name="inst_C46A7719" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall_red" x="2656" y="1088" name="inst_2A429BA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -262,9 +261,10 @@
     <instance objName="obj_laserVir" x="1792" y="1024" name="inst_9989604B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_laserVir" x="1792" y="992" name="inst_4BB9DB32" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_laserVir" x="1792" y="960" name="inst_5389E8B2" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_PlayerHealth" x="832" y="384" name="inst_5B74D7BF" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_playerMoves" x="992" y="384" name="inst_756C082E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="objRmBossLevel" x="2592" y="1024" name="inst_DF9DBD09" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_playerMoves" x="640" y="672" name="inst_C40CE03B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_player" x="832" y="2048" name="inst_E7BCB352" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_PlayerHealth" x="640" y="640" name="inst_8918F640" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

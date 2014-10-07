@@ -154,7 +154,6 @@
       </objects>
     </objects>
     <objects name="Player">
-      <object>objects\obj_player</object>
       <objects name="playerGUI">
         <object>objects\obj_playerMoves</object>
         <object>objects\obj_PlayerHealth</object>
@@ -201,9 +200,11 @@
     <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
+    <room>rooms\rm_test_boss</room>
+    <room>rooms\rm_hardLevel</room>
+    <room>rooms\sizeDemo</room>
     <room>rooms\menue</room>
     <room>rooms\introRoom</room>
-    <room>rooms\rm_hardLevel</room>
     <room>rooms\bossInto</room>
     <room>rooms\bossRoom</room>
     <room>rooms\winScreen</room>
@@ -222,7 +223,6 @@
       <rooms name="not in use">
         <room>rooms\rm_test_spike</room>
       </rooms>
-      <room>rooms\sizeDemo</room>
     </rooms>
   </rooms>
   <constants number="3">
