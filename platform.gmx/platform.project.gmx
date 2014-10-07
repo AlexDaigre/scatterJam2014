@@ -175,6 +175,11 @@
   <rooms name="rooms">
 =======
     <room>rooms\bossRoom</room>
+=======
+    <room>rooms\bossRoom</room>
+    <room>rooms\rm_hardLevel</room>
+    <room>rooms\sizeDemo</room>
+>>>>>>> parent of 0405495... Update Players
     <room>rooms\rm_test_enemy</room>
     <room>rooms\sizeDemo</room>
 =======

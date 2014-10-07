@@ -26,11 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>globalvar respawnTimer;
-
-globalvar hitpoints;
-hitpoints = 10;
-
-
 respawnTimer = 0;
 </string>
           </argument>
@@ -62,10 +57,15 @@ respawnTimer = 0;
         respawnTimer = 300;
     }
 
+    if !global.playerAttacking{
+        if !global.invul{
+            global.playerHealth -= 100;
+            }
+    }
 }
 
 if (respawnTimer &gt; 0){
-    respawnTimer -=1;
+    //respawnTimer -=1;
 }
 if (respawnTimer &lt;= 0){
     mask_index = sprite34;
@@ -196,6 +196,8 @@ else
     
     
 
+=======
+>>>>>>> parent of 0405495... Update Players
 </string>
           </argument>
         </arguments>
