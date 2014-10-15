@@ -213,8 +213,12 @@ if keyRestart
 
 //health code. checks if you are dead, important that this comes before movement becase otherwise you will die and respawn inside the thing killing you
 if (global.playerHealth &lt;= 0){
-    room_restart();
-    //scr_playerBossRespawn();
+    if !global.isItABoss{
+        scr_playerBossRespawn();
+    }
+    else{
+        room_restart()
+    }
 }
 
 
@@ -451,7 +455,9 @@ if instance_exists(cameraBox)
        cameraBox.y += cameraTargetY
     }
 
-cameraMovement();
+if !global.isItABoss{
+    cameraMovement();
+    }
 
 /*
 if global.invulTimer &gt;0{

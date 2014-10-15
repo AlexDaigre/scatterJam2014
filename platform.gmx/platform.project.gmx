@@ -158,11 +158,9 @@
         <object>objects\obj_playerMoves</object>
         <object>objects\obj_PlayerHealth</object>
       </objects>
+      <object>objects\obj_player</object>
       <object>objects\isBossRoom</object>
       <object>objects\notBossRoom</object>
-      <objects name="test">
-        <object>objects\obj_player</object>
-      </objects>
     </objects>
     <objects name="mobs">
       <object>objects\par_mob</object>
@@ -200,13 +198,11 @@
     <timeline>timelines\timeline1</timeline>
   </timelines>
   <rooms name="rooms">
-    <room>rooms\rm_test_boss</room>
-    <room>rooms\rm_hardLevel</room>
-    <room>rooms\sizeDemo</room>
+    <room>rooms\bossRoom</room>
     <room>rooms\menue</room>
     <room>rooms\introRoom</room>
+    <room>rooms\rm_hardLevel</room>
     <room>rooms\bossInto</room>
-    <room>rooms\bossRoom</room>
     <room>rooms\winScreen</room>
     <room>rooms\credits</room>
     <room>rooms\rmControlls</room>
@@ -223,10 +219,12 @@
       <rooms name="not in use">
         <room>rooms\rm_test_spike</room>
       </rooms>
+      <room>rooms\rm_test_boss</room>
+      <room>rooms\sizeDemo</room>
     </rooms>
   </rooms>
   <constants number="3">
-    <constant name="GM_build_date">41918.9768367824</constant>
+    <constant name="GM_build_date">41927.9558012269</constant>
     <constant name="GM_build_date">41917.7185452546</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
